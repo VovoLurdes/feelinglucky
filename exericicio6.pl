@@ -1,5 +1,9 @@
 #!/usr/bin/perl
 
+use strict;
+use warnings FATAL => 'all';
+use diagnostics;
+
 use File::Copy;
 
 print "\nColoque o caminho do arquivo e o nome dele, EXE: caminho/bla/arquivo.txt \n";

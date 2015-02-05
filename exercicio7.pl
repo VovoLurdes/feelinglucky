@@ -2,6 +2,10 @@
 
 local $\ = "\n";
 
+use strict;
+use warnings FATAL => 'all';
+use diagnostics;
+
 print "DIGITE O NOME DO FUCKING ARQUIVO\n";
 chomp (my $file=<STDIN>);
 

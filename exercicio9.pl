@@ -1,9 +1,18 @@
 #!/usr/bin/perl
 
+local $/;
 
-my $arquivo = @ARGV[0];
+use strict;
+use warnings FATAL => 'all';
+use diagnostics;
+
+my $arquivo = $ARGV[0];
 
 open(my $fh, '<', $arquivo) or die "Não foi possível abrir o arquivo '$arquivo' $!";
-print <$fh>;
+
+my $solo = <$fh>;
+
+print $solo;
+
 close $fh;
 

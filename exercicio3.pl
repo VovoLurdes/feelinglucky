@@ -1,9 +1,14 @@
 #!/usr/bin/perl#!
 
-my $diretorio = @ARGV[0];
+use strict;
+use warnings FATAL => 'all';
+use diagnostics;
+
+
+my $diretorio = $ARGV[0];
 
 opendir(DIR, $diretorio);
-@files = readdir(DIR);
+my @files = readdir(DIR);
 
 closedir(DIR);
 

@@ -2,10 +2,14 @@
 
 use File::Remove 'remove';
 
-my $arquivo;
+use strict;
+use warnings FATAL => 'all';
+use diagnostics;
+
+
 
 print "\nDIGITE O NOME DO ARQUIVO QUE QUER EXCLUIR: ";
-chomp ($arquivo=<STDIN>);
+chomp (my $arquivo=<STDIN>);
 
 if (-e $arquivo){
 	remove ($arquivo);
