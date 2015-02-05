@@ -1,4 +1,4 @@
-#!/usr/bin/perl#!
+#!/usr/bin/perl
 
 my $arquivo = $ARGV[0];
 
