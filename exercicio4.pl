@@ -3,19 +3,18 @@
 use strict;
 use warnings FATAL => 'all';
 use diagnostics;
+use Carp;
+use charnames qw( :full );
 
 my $diretorio = $ARGV[0];
 
-opendir(DIR, $diretorio);
-my @files = readdir(DIR);
+opendir 'DIR', $diretorio;
+my @files = readdir 'DIR';
 my $i=0;
-closedir(DIR);
+closedir 'DIR';
 
 foreach(@files){
 
-        if ( $_ =~ /\.xml/){ $i++; print "\n$_"; }
-
+        if (m/[.]xml/xms) { $i++; print "\n$_" or croak 'bla'; }
 }
-
-print "\nExiste $i arquivo(s) xml\n\n";
-
+print "\nExiste $i arquivo(s) xml\n\n" or croak 'bla';

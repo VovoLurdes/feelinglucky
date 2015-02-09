@@ -12,9 +12,3 @@ if (-e $arquivo ){
 	print 'A pasta existe' or croak 'bar';
 }
 
-
-
-
-
-
-
