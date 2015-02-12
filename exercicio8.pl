@@ -16,6 +16,6 @@ open my $fh, '<', $arquivo or croak "Não foi possível abrir o arquivo '$arquiv
 while (my $solo = <$fh>){ print $solo or croak 'bla'; }
 
 close $fh or croak "Erro ao fechar: $CHILD_ERROR, $OS_ERROR";
-};
+} or croak 'foo';
 
 carp "Erro: $EVAL_ERROR" if $EVAL_ERROR;

@@ -6,7 +6,7 @@ use diagnostics;
 use Carp;
 use English qw( -no_match_vars);
 
-local $INPUT_RECORD_SEPARATOR;
+local $INPUT_RECORD_SEPARATOR = undef;
 
 eval {
 my $arquivo = $ARGV[0];
@@ -18,7 +18,9 @@ my $solo = <$fh>;
 print $solo or croak 'bla';
 
 close $fh or croak "Erro ao fechar: $CHILD_ERROR, $OS_ERROR";
-};
+
+
+} or croak 'vsf';
 
 carp "Erro: $EVAL_ERROR" if $EVAL_ERROR;
 
